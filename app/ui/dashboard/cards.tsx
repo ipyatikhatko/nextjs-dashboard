@@ -14,20 +14,13 @@ const iconMap = {
   invoices: InboxIcon,
 };
 
-interface CardWrapperProps {
-  totalPaidInvoices: string;
-  totalPendingInvoices: string;
-  numberOfCustomers: number;
-  numberOfInvoices: number;
-}
-
-export default async function CardWrapper(props: CardWrapperProps) {
+export default async function CardWrapper() {
   const {
     totalPaidInvoices,
     totalPendingInvoices,
     numberOfCustomers,
     numberOfInvoices,
-  } = props;
+  } = await fetchCardData();
 
   return (
     <>
